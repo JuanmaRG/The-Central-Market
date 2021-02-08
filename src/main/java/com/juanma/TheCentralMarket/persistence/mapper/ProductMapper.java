@@ -3,17 +3,15 @@ package com.juanma.TheCentralMarket.persistence.mapper;
 import com.juanma.TheCentralMarket.domain.Product;
 import com.juanma.TheCentralMarket.persistence.crud.ProductoCrudRepository;
 import com.juanma.TheCentralMarket.persistence.entity.Producto;
-import org.mapstruct.InheritInverseConfiguration;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
+import org.mapstruct.*;
+import org.springframework.data.repository.NoRepositoryBean;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring", uses={CategoryMapper.class})
 public interface ProductMapper {
     @Mappings({
-            @Mapping(source="id_producto", target="productId"),
+            @Mapping(source="idProducto", target="productId"),
             @Mapping(source="nombre", target="name"),
             @Mapping(source="idCategoria", target="categoryId"),
             @Mapping(source="precioVenta", target="price"),
